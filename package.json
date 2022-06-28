@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "qhama server",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon node server.js"
+  },
+  "author": "Abongile Zozi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mailchimp-api-v3": "^1.14.0",
+    "nodemon": "^2.0.6"
+  }
+}
