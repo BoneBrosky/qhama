@@ -5,6 +5,7 @@ const fs = require("fs");
 const https = require("https");
 const path = require("path");
 const Mailchimp = require("mailchimp-api-v3");
+var cors = require("cors");
 
 require("dotenv").config({
   path: __dirname + "/variables.env",
@@ -14,6 +15,13 @@ const mc_api_key = process.env.MAILCHIMP_API_KEY;
 const list_id = process.env.LIST_ID;
 
 const app = express();
+
+var corsOptions = {
+  origin: "https://qhama.co.za",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 const mailchimp = new Mailchimp(mc_api_key);
 
 app.get("/api/membersAdd", (req, res) => {
